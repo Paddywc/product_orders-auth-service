@@ -1,4 +1,9 @@
 # Auth Service
+![Build](https://github.com/Paddywc/product_orders-auth-service/actions/workflows/build.yml/badge.svg)
+![Coverage](https://img.shields.io/codecov/c/github/Paddywc/product_orders-auth-service)
+![Java](https://img.shields.io/badge/Java-17-orange)
+![Spring Boot](https://img.shields.io/badge/SpringBoot-4.x-brightgreen)
+![Docker](https://img.shields.io/badge/Docker-ready-blue)
 
 The **Auth Service** is the platform’s authentication provider. It:
 - Registers users and handles login
