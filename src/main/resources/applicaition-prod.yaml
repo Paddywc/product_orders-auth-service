@@ -1,0 +1,46 @@
+server:
+  port: 8083
+  address: 0.0.0.0
+  forward-headers-strategy: framework
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+      initialization-fail-timeout: 60000
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: false
+        show_sql: false
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+jwt:
+  issuer: product-orders-auth
+  expiration-seconds: ${JWT_EXPIRATION_SECONDS}
+  key-id: ${JWT_KEY_ID}
+  keystore:
+    location: classpath:keystore/auth-keystore.p12
+    password: ${JWT_KEYSTORE_PASSWORD}
+    alias: auth-key
+
+management:
+  endpoint:
+    health:
+      show-details: never
+  endpoints:
+    web:
+      exposure:
+        include: health,info

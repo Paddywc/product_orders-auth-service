@@ -5,6 +5,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import product.orders.authservice.domain.security.PasswordMatcher;
 
+/**
+ * Wrapper for Spring's BCryptPasswordEncoder to implement PasswordMatcher interface. Assumes that the config maps
+ *  * a password encoder named "bcrypt" as the default encoder.
+ */
 @Component
 public class BCryptPasswordMatcher implements PasswordMatcher {
 

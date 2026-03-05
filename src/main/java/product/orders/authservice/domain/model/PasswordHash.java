@@ -1,5 +1,8 @@
 package product.orders.authservice.domain.model;
 
+/**
+ * Password hash value object.
+ */
 public record PasswordHash(String value) {
 
     public PasswordHash {
