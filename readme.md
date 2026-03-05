@@ -10,7 +10,6 @@ The **Auth Service** is the platform’s authentication provider. It:
 - Issues **JWT access tokens**
 - Publishes its **public signing keys** via a **JWKS** endpoint so other services can verify JWTs without sharing secrets
 
-
 ## Architecture Role
 
 - **Issuer:** this service signs JWTs (private key stays here)
@@ -45,7 +44,6 @@ Run the service using `docker-compose up --build`. The service will be available
 - `POST /api/auth/login` — Authenticate and receive a JWT
 - `GET  /.well-known/jwks.json` — JWKS (public keys for JWT verification)
 - `GET  /actuator/**` — Health/metrics endpoints (if enabled)
-
 
 ## JWT + JWKS
 
