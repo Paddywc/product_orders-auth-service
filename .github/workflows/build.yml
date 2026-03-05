@@ -3,7 +3,6 @@ name: Build and Test
 on:
   push:
   pull_request:
-  workflow_dispatch:
 
 jobs:
   build:
@@ -13,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Java
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -24,3 +23,5 @@ jobs:
 
       - name: Upload coverage
         uses: codecov/codecov-action@v4
+        with:
+          files: ./target/site/jacoco/jacoco.xml
