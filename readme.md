@@ -1,9 +1,11 @@
 # Auth Service
 
 The **Auth Service** is the platform’s authentication provider. It:
+
 - Registers users and handles login
 - Issues **JWT access tokens**
-- Publishes its **public signing keys** via a **JWKS** endpoint so other services can verify JWTs without sharing secrets
+- Publishes its **public signing keys** via a **JWKS** endpoint so other services can verify JWTs without sharing
+  secrets
 
 ## Architecture Role
 
@@ -15,7 +17,7 @@ All protected endpoints in other services require the JWT token: `Authorization:
 ## Tech Stack
 
 | Technology      | Purpose               |
-| --------------- | --------------------- |
+|-----------------|-----------------------|
 | Java 17         | Runtime               |
 | Spring Boot     | Application framework |
 | Spring Security | Authentication        |
@@ -31,7 +33,9 @@ An example list of environment variables is found in [`.env.example`](.env.examp
 
 ## Running the Service
 
-Run the service using `docker-compose up --build`. The service will be available at `http://localhost:8083`.
+Run the service using `docker-compose up --build` from [the root directory](../). To run this service in isolation, copy
+the auth service and mysql from the root [docker-compose](../docker-compose.yaml) file and run them separately. The
+service will be available on port 8083.
 
 ## HTTP Endpoints
 
