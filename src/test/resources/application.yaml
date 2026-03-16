@@ -1,0 +1,4 @@
+jwt:
+  key-id: auth-key-1
+  keystore:
+    password: "123abc..."
